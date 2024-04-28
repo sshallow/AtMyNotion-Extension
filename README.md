@@ -1,4 +1,5 @@
 # AtMyNotion-Extension
+[English](README.md) | [简体中文](README.zh-CN.md)
 
 AtMyNotion-Extension is a Chrome browser extension that seamlessly integrates your Notion notes into your everyday web searches. With this extension, you can find relevant Notion content directly from your search engine results, enhancing your productivity and knowledge management.
 
