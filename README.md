@@ -44,7 +44,7 @@ If you encounter any issues or have any suggestions for improvement, please [ope
 
 This project is licensed under the [MIT License](LICENSE).
 
-## Buy Me a Coffee
+## Buy Me a Coffee ☕
 
 If you find this extension useful and would like to support its development, you can buy me a coffee!
 
