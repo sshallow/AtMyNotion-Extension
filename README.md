@@ -8,6 +8,10 @@ AtMyNotion-Extension is a Chrome browser extension that seamlessly integrates yo
 
 - **Access Without Leaving**: Click to jump directly to Notion pages from your search results, bypassing the need to switch apps or tabs, for a seamless workflow.
 
+## Preview
+
+https://github.com/sshallow/AtMyNotion-Extension/assets/21257340/fe92edfd-27bc-41c2-bf17-c04ed0670f92
+
 ## How to Use
 
 1. **Install the Extension**: Add the extension to your Chrome/Edge browser.
