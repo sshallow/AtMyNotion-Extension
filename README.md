@@ -43,3 +43,16 @@ If you encounter any issues or have any suggestions for improvement, please [ope
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Buy Me a Coffee
+
+If you find this extension useful and would like to support its development, you can buy me a coffee!
+
+Your support is greatly appreciated and will help me dedicate more time to maintaining and improving AtMyNotion-Extension.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B2XG28D)
+
+<img src="https://github.com/sshallow/AtMyNotion-Extension/assets/21257340/d8e9a707-c86d-40f6-80fa-20b5130a09ff" alt="AtMyNotion-Extension Preview" width="240px">
+
+<img src="https://github.com/sshallow/AtMyNotion-Extension/assets/21257340/0300a891-b741-4ea0-aa26-eee2c728f1b1" alt="AtMyNotion-Extension Preview" width="240px">
+
