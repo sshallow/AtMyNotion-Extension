@@ -33,10 +33,6 @@ To install the extension, follow these steps:
 
 Enjoy it!
 
-## Contribute
-
-If you want to contribute to this project, feel free to fork the repository and submit a pull request.
-
 ## Issues
 
 If you encounter any issues or have any suggestions for improvement, please [open an issue](link_here) on GitHub.
