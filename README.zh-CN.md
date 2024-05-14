@@ -54,9 +54,9 @@ https://github.com/sshallow/AtMyNotion-Extension/assets/21257340/fe92edfd-27bc-4
 
 尽情使用吧!
 
-## 反馈问题
+## 反馈建议
 
-如果你遇到任何问题或有任何改进建议，请在 GitHub 上提出 issue。
+如果你遇到任何问题或有任何改进建议，请在 GitHub 上提出 issue 或提交 pull request。
 
 ## 许可证
 
@@ -65,8 +65,6 @@ https://github.com/sshallow/AtMyNotion-Extension/assets/21257340/fe92edfd-27bc-4
 ## 支持我一杯咖啡 ☕
 
 如果你觉得这个扩展程序很有用，并希望支持它的开发，欢迎请我喝杯咖啡!
-
-你的支持将极大地鼓舞我，帮助我投入更多时间来维护和改进 AtMyNotion-Extension。
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B2XG28D)
 
