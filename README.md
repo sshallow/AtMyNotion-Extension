@@ -24,12 +24,32 @@ https://github.com/sshallow/AtMyNotion-Extension/assets/21257340/fe92edfd-27bc-4
 
 ## Installation
 
-To install the extension, follow these steps:
+There are three ways to install the AtMyNotion Extension:
+
+### Install from Google Web Store (Recommended for most users)
+1. Visit the [AtMyNotion](https://chromewebstore.google.com/detail/at-my-notion/edfigkgekgdhmecpnahljldneglkkmkh) in the Google Web Store.
+2. Click "Add to Chrome" to install the extension.
+3. After installation, click the AtMyNotion icon in your browser's toolbar to open the pop-up, and log in to your Notion account to sync your workspace.
+4. Start Searching: Use your favorite search engine as usual, and relevant Notion content will now appear alongside your search results.
+
+### Install from Pre-built Package
 1. Download the Extension: Go to the [releases](https://github.com/sshallow/AtMyNotion-Extension/releases/tag/v0.0.1) and download the AtMyNotion-Extension zip.
 2. Enable Developer Mode: In your Chrome or Edge browser, type `chrome://extensions/` or `edge://extensions`  in the address bar, and enable 'Developer Mode'.
 3. Install: Drag and drop the downloaded extension file into the extensions page or use 'Load unpacked' to select the unpacked installation folder.
 4. Log in to Notion: After installation, click the AtMyNotion icon in your browser's toolbar to open the pop-up, and log in to your Notion account to sync your workspace.
 5. Start Searching: Use your favorite search engine as usual, and relevant Notion content will now appear alongside your search results.
+
+### Install from Source Code
+
+1. Clone the repository: `git clone https://github.com/sshallow/AtMyNotion-Extension.git`.
+2. Navigate to the project directory: `cd AtMyNotion-Extension`.
+3. (Strongly Recommended) Install pnpm: `npm install --location=global pnpm`.
+4. Install dependencies: `pnpm install`.
+5. Build the extension: `pnpm build`.
+6. Enable Developer Mode: In your Chrome or Edge browser, type `chrome://extensions/` or `edge://extensions` in the address bar, and enable 'Developer Mode'.
+7. Install: Click 'Load unpacked' and select the `build/chrome-mv3-prod` folder from the project directory.
+8. Log in to Notion: After installation, click the AtMyNotion icon in your browser's toolbar to open the pop-up, and log in to your Notion account to sync your workspace.
+9. Start Searching: Use your favorite search engine as usual, and relevant Notion content will now appear alongside your search results.
 
 Enjoy it!
 
