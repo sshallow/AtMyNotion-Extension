@@ -54,10 +54,6 @@ https://github.com/sshallow/AtMyNotion-Extension/assets/21257340/fe92edfd-27bc-4
 
 尽情使用吧!
 
-## 贡献代码
-
-如果你想为该项目做出贡献，欢迎 Fork 该仓库并提交拉取请求。
-
 ## 反馈问题
 
 如果你遇到任何问题或有任何改进建议，请在 GitHub 上提出 issue。
