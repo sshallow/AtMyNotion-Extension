@@ -38,7 +38,7 @@ export function ATMSpaceSwitcher() {
     }
 
     return (
-        <Select onValueChange={handleSelectOnChange} value={preferences?.currentSpace?.id}>
+        <Select onValueChange={handleSelectOnChange} value={preferences?.currentSpace?.id || ""}>
             <SelectTrigger className="w-full">
                 <SelectValue placeholder="Select notion workspace"/>
             </SelectTrigger>

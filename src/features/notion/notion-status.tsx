@@ -29,27 +29,24 @@ export const NotionStatus = () => {
                 searchTerm: "req"
             }
         }).then(response => {
+            console.log("background-get-spaces 中传回来的数据 response", response)
             if (response) {
-                const spacesResponse = Object.values(response.response)[0];
+                const spacesResponse = Object.values(response.response)[0] as any;
 
-                const userInfo = Object.values(spacesResponse.notion_user)[0].value;
+                const userInfo = (Object.values(spacesResponse.notion_user)[0] as any).value;
                 const {id, name, email, profile_photo} = userInfo;
                 const user: UserInfo = {id, name, email, profile_photo};
                 dispatch(setUser(user));
 
-                const spaceDataResponseList = Object.values(response.spaceDataResponse.results);
-
-                const spaceInfo = Object.values(spacesResponse.space);
-                const spaces: SpaceInfo[] = spaceInfo.map(({ value: { id, name, icon } }) => {
-                    const spaceData = spaceDataResponseList.find(space => space.id === id);
-                    return {
-                        id,
-                        name,
-                        icon,
-                        domain: spaceData?.domain || '',
-                        publicDomainIds: spaceData?.publicDomainIds || []
-                    };
-                });
+                console.log("准备处理空间信息", response.spaceDataResponse)
+                
+                // 直接使用简化后的空间数据
+                const spaces: SpaceInfo[] = response.spaceDataResponse.map((space: any) => ({
+                    id: space.id,
+                    name: space.name,
+                    icon: space.icon || space.name.charAt(0),
+                    domain: ''
+                }));
                 dispatch(setSpaces(spaces));
 
                 // 初始设置默认第一个
@@ -70,7 +67,9 @@ export const NotionStatus = () => {
     };
 
     useEffect(() => {
+        console.log("useEffect NotionStatus 中 userInfo", userInfo)
         if (!userInfo) {
+            console.log("在 NotionStatus 中 userInfo 为空，开始发起 fetchSpacesAndHandleData")
             fetchSpacesAndHandleData();
         }
     }, [login]);

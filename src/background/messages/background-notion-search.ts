@@ -11,38 +11,37 @@ const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
         throw new Error("Missing required parameters: user, userPreferences, or query");
     }
 
-    // 获取最近页面访问数据
-    const recentPagesResponse = await fetchClient({
-        url: "https://www.notion.so/api/v3/getRecentPageVisits",
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-Notion-Active-User-Header": user.id,
-            "X-Notion-Space-Id": userPreferences.currentSpace.id,
-        },
-        body: {
-            userId: user.id,
-            spaceId: userPreferences.currentSpace.id
-        }
-    });
+    // 暂时注释获取最近页面访问数据
+    // const recentPagesResponse = await fetchClient({
+    //     url: "https://www.notion.so/api/v3/getRecentPageVisits",
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //         "X-Notion-Active-User-Header": user.id,
+    //         "X-Notion-Space-Id": userPreferences.currentSpace.id,
+    //     },
+    //     body: {
+    //         userId: user.id,
+    //         spaceId: userPreferences.currentSpace.id
+    //     }
+    // });
 
-    if (!recentPagesResponse) {
-        console.log("recentPagesResponse 失败")
-        throw new Error("Network response was not ok");
-    }
+    // if (!recentPagesResponse) {
+    //     console.log("recentPagesResponse 失败")
+    //     throw new Error("Network response was not ok");
+    // }
 
-    // 修改 recentPagesForBoosting
-    recentPagesResponse.pages = recentPagesResponse.pages.map(item => ({
-        visitedAt: item.visitedAt,
-        pageId: item.id,
-    }));
+    // // 修改 recentPagesForBoosting
+    // recentPagesResponse.pages = recentPagesResponse.pages.map(item => ({
+    //     visitedAt: item.visitedAt,
+    //     pageId: item.id,
+    // }));
 
+    console.log("搜索的时候读取 userPreferences",userPreferences)
     // 构建新的请求体，将最近页面访问数据插入到 recentPagesForBoosting 字段中
     const requestBody = {
-        source: "quick_find_input_change",
-        sort: {
-            field: "relevance",
-        },
+        recentPagesForBoosting: [], // 暂时为空数组
+        query: query,
         filters: {
             lastEditedTime: {},
             excludeTemplates: false,
@@ -54,17 +53,19 @@ const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
             isDeletedOnly: false,
             createdTime: {},
             inTeams: [],
-            includePublicPagesWithoutExplicitAccess: false,
+            includePublicPagesWithoutExplicitAccess: false
         },
-        excludedBlockIds: [],
-        query: query,
-        limit: 8,
-        recentPagesForBoosting: recentPagesResponse.pages, // 插入最近页面数据
-        type: "BlocksInSpace",
-        searchSessionId: "edd8ad05-fa6e-411b-8478-98378c024e3b",
-        searchSessionFlowNumber: 3,
         searchExperimentOverrides: {},
-        spaceId: userPreferences.currentSpace.id
+        excludedBlockIds: [],
+        type: "BlocksInSpace",
+        source: "quick_find_input_change",
+        limit: 8,
+        searchSessionFlowNumber: 5,
+        sort: {
+            field: "relevance"
+        },
+        spaceId: userPreferences.currentSpace.id,
+        searchSessionId: "6fed8797-79f6-4c8d-a6e8-8810a1139cbe"
     };
 
     // 开始搜索
@@ -88,7 +89,7 @@ const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
             debugger
             // 处理 title, pathText
             if (item.highlight?.title  && item.highlight.title.includes('<gzkNfoUU>')) {
-                updatedItem.highlight.pathText = item.highlight.pathText.replace(item.highlight.title, '');
+                // updatedItem.highlight.pathText = item.highlight.pathText.replace(item.highlight.title, '');
                 updatedItem = {
                     ...updatedItem,
                     title:item.highlight?.title
